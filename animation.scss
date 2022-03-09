@@ -1,0 +1,60 @@
+@import "./styles.scss";
+
+$dotSize: 1.4em;
+$animDelay: 0.1s;
+
+// main animation
+main {
+  animation: mainanimation 1s forwards ease-in-out 2s;
+  transform: scale(0);
+}
+
+//LOADING animation
+.threedotloader {
+  display: flex;
+  .spacer {
+    flex: auto 1;
+  }
+  .dot {
+    width: $dotSize;
+    height: $dotSize;
+    border-radius: $dotSize;
+    background-color: $secondary;
+    transform: scale(0);
+    display: inline-block;
+    animation: dotanim 3s ease-in-out;
+    @for $i from 0 to 4 {
+      &:nth-child(#{$i + 1}) {
+        animation-delay: $animDelay * $i;
+      }
+    }
+  }
+}
+
+//dot animation keyframe
+@keyframes dotanim {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+    // display: none;
+  }
+}
+
+@keyframes mainanimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

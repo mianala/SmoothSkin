@@ -1,145 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
 
-$primary: #ffceb8;
-$secondary: #db5252;
-$smooth: #b3b3b3;
-$money: #635a58;
-$tagline: #492923;
-
-$dotSize: 1.4em;
-$animDelay: 0.1s;
+$primary-color: #ffceb8;
+$secondary-color: #db5252;
+$tag-color: #b3b3b3;
+$price-tag-color: #635a58;
+$description-color: #492923;
 
 * {
-    margin: 5px;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+p {
+  margin: 0.5rem;
+}
+
+body {
+  margin: 0;
+}
+
 main {
-    animation: mainanimation 1s forwards ease-in-out 2s;
-    transform: scale(0);
-    &::after {
-        content: "";
-        width: 50%;
-        height: 100%;
-        background: #ffceb8 url(assets/Grey-and-Pink-Skin-Care-Tips-Instagram-Story.png) no-repeat bottom left;
-        background-size: clamp(400px, 100vw, 100%);
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: -1;
-    }
+  &::after {
+    content: "";
+    width: 50%;
+    min-height: 100vh;
+    background: #ffceb8 url(assets/Grey-and-Pink-Skin-Care-Tips.png) no-repeat
+      bottom left;
+    background-size: clamp(400px, 100vw, 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
 }
+
 article {
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    .sub-header {
-        font-family: "Arvo";
-        font-weight: bolder;
-        color: rgb(172, 172, 172);
-        font-size: normal;
-        letter-spacing: 5px;
+  padding: 3rem;
+
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .tag {
+    font-family: "Arvo";
+    font-weight: bolder;
+    color: $tag-color;
+    letter-spacing: 0.2rem;
+  }
+
+  h1 {
+    margin: 1.5rem 0px;
+    color: black;
+    font-size: clamp(2.5rem, 3vw, 4rem);
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    span {
+      color: $secondary-color;
     }
-    h1 {
-        margin: 1.5rem 0px;
-        color: black;
-        font-size: clamp(2rem, 3vw, 3rem);
-        font-weight: bolder;
-        font-family: "Open Sans", sans-serif;
-        span {
-            color: $secondary;
-        }
+  }
+  .description {
+    font-family: "Poppins";
+    color: $description-color;
+    font-size: clamp(24px, 1.5vw, 26px);
+  }
+  .price {
+    line-height: 2rem;
+
+    font-size: 3rem;
+    font-family: "Poppins";
+    var {
+      color: #ffceb8;
+      font-family: "Raleway";
+      font-style: normal; // cancels default var style
     }
-    .description {
-        font-family: "Poppins";
-        color: $tagline;
-        font-size: clamp(16px, 1.5vw, 22px);
-    }
-    .pricing {
-        font-size: 3rem;
-        font-family: "Poppins";
-        .money {
-            color: #ffceb8;
-            font-family: "Raleway";
-        }
-    }
-    .social-media {
-        a {
-            color: black;
-            text-decoration: none;
-            font-family: "Open sans";
-        }
-    }
+  }
+  .social-media a {
+    color: black;
+    text-decoration: none;
+    font-family: "Open sans";
+  }
 }
 
 button {
-    width: fit-content;
-    background-color: black;
-    color: white;
-    padding: 10px 30px;
-    font-size: larger;
-    border: transparent;
-    cursor: pointer;
-    &:hover {
-        background-color: $secondary;
-    }
-}
-//LOADING animation
-.threedotloader {
-    display: flex;
-    .spacer{
-        flex: auto 1;
-    }
-    .dot {
-        width: $dotSize;
-        height: $dotSize;
-        border-radius: $dotSize;
-        background-color: $secondary;
-        transform: scale(0);
-        display: inline-block;
-        animation: dotanim 3s ease-in-out;
-        @for $i from 0 to 4 {
-            &:nth-child(#{$i + 1}) {
-                animation-delay: $animDelay * $i;
-            }
-        }
-    }
-}
-//dot animation keyframe
-@keyframes dotanim {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(1);
-    }
-    90% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(0);
-        // display: none;
-    }
-}
-//to switch the color of only and $17.5 when device width is less than 540px
-@media screen and (max-width: 540px) {
-    .pricing {
-        color: $primary;
-        span.money {
-            color: black;
-        }
-    }
+  width: fit-content; // cancels default flex behaviour
+  background-color: black;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: larger;
+  border: transparent; // cancels default button behaviour
+  cursor: pointer;
+  &:hover {
+    background-color: $secondary-color;
+  }
 }
 
-@keyframes mainanimation {
-    0%{
-        transform: scale(0);
-        opacity: 0;
+// to switch the color of only and $17.5 when device width is less than 540px
+@media screen and (max-width: 555px) {
+  article .price {
+    color: $primary-color;
+    var {
+      color: black;
     }
-    100%{
-        transform: scale(1);
-        opacity: 1;
-    }
+  }
 }
