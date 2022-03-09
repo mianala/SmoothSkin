@@ -34,7 +34,7 @@ article {
     justify-content: space-around;
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     .sub-header {
         font-family: "Arvo";
         font-weight: bolder;
@@ -120,6 +120,7 @@ button {
     }
     100% {
         transform: scale(0);
+        // display: none;
     }
 }
 //to switch the color of only and $17.5 when device width is less than 540px

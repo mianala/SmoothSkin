@@ -36,7 +36,7 @@ article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 90vh;
+  height: 100vh;
 }
 
 article .sub-header {
