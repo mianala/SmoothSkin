@@ -21,19 +21,17 @@ body {
   margin: 0;
 }
 
-main {
-  &::after {
-    content: "";
-    width: 50%;
-    min-height: 100vh;
-    background: #ffceb8 url(assets/Grey-and-Pink-Skin-Care-Tips.png) no-repeat
-      bottom left;
-    background-size: clamp(400px, 100vw, 100%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-  }
+main::after {
+  content: "";
+  width: 50%;
+  min-height: 100vh;
+  background: #ffceb8 url(assets/Grey-and-Pink-Skin-Care-Tips.png) no-repeat
+    bottom left;
+  background-size: clamp(400px, 100vw, 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }
 
 article {
