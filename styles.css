@@ -1,17 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
-* {
-  margin: 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-main {
-  -webkit-animation: mainanimation 1s forwards ease-in-out 2s;
-          animation: mainanimation 1s forwards ease-in-out 2s;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+body {
+  margin: 0;
 }
 
 main::after {
@@ -27,6 +18,7 @@ main::after {
 }
 
 article {
+  padding: 3rem;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   display: -webkit-box;
@@ -97,120 +89,12 @@ button:hover {
   background-color: #db5252;
 }
 
-.threedotloader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.threedotloader .spacer {
-  -webkit-box-flex: 1;
-      -ms-flex: auto 1;
-          flex: auto 1;
-}
-
-.threedotloader .dot {
-  width: 1.4em;
-  height: 1.4em;
-  border-radius: 1.4em;
-  background-color: #db5252;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  display: inline-block;
-  -webkit-animation: dotanim 3s ease-in-out;
-          animation: dotanim 3s ease-in-out;
-}
-
-.threedotloader .dot:nth-child(1) {
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-.threedotloader .dot:nth-child(2) {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-}
-
-.threedotloader .dot:nth-child(3) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-}
-
-.threedotloader .dot:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-}
-
-@-webkit-keyframes dotanim {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  90% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-}
-
-@keyframes dotanim {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  90% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-}
-
 @media screen and (max-width: 540px) {
   .pricing {
     color: #ffceb8;
   }
   .pricing span.money {
     color: black;
-  }
-}
-
-@-webkit-keyframes mainanimation {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes mainanimation {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
   }
 }
 /*# sourceMappingURL=styles.css.map */
