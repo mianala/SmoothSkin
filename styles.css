@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@100;200;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p {
+  margin: 0.5rem;
+}
+
 body {
   margin: 0;
 }
@@ -8,8 +18,8 @@ body {
 main::after {
   content: "";
   width: 50%;
-  height: 100%;
-  background: #ffceb8 url(assets/Grey-and-Pink-Skin-Care-Tips-Instagram-Story.png) no-repeat bottom left;
+  min-height: 100vh;
+  background: #ffceb8 url(assets/Grey-and-Pink-Skin-Care-Tips.png) no-repeat bottom left;
   background-size: clamp(400px, 100vw, 100%);
   position: absolute;
   top: 0;
@@ -28,22 +38,21 @@ article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-article .sub-header {
+article .tag {
   font-family: "Arvo";
   font-weight: bolder;
-  color: #acacac;
-  font-size: normal;
-  letter-spacing: 5px;
+  color: #b3b3b3;
+  letter-spacing: 0.2rem;
 }
 
 article h1 {
   margin: 1.5rem 0px;
   color: black;
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: bolder;
+  font-size: clamp(2.5rem, 3vw, 4rem);
+  font-weight: 700;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -54,17 +63,19 @@ article h1 span {
 article .description {
   font-family: "Poppins";
   color: #492923;
-  font-size: clamp(16px, 1.5vw, 22px);
+  font-size: clamp(24px, 1.5vw, 26px);
 }
 
-article .pricing {
+article .price {
+  line-height: 2rem;
   font-size: 3rem;
   font-family: "Poppins";
 }
 
-article .pricing .money {
+article .price var {
   color: #ffceb8;
   font-family: "Raleway";
+  font-style: normal;
 }
 
 article .social-media a {
@@ -79,7 +90,7 @@ button {
   width: fit-content;
   background-color: black;
   color: white;
-  padding: 10px 30px;
+  padding: 1rem 2rem;
   font-size: larger;
   border: transparent;
   cursor: pointer;
@@ -89,11 +100,11 @@ button:hover {
   background-color: #db5252;
 }
 
-@media screen and (max-width: 540px) {
-  .pricing {
+@media screen and (max-width: 555px) {
+  article .price {
     color: #ffceb8;
   }
-  .pricing span.money {
+  article .price var {
     color: black;
   }
 }
